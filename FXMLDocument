@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="309.0" prefWidth="238.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="calculator.FXMLDocumentController">
+  <children>
+    <GridPane prefHeight="228.5" prefWidth="179.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="80.5">
+      <children>
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefHeight="19.0" prefWidth="52.0" text="7" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Button mnemonicParsing="false" prefWidth="52.0" text="del" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="1" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="4" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <Button minWidth="40.0" mnemonicParsing="false" onAction="#handleOperation" prefWidth="52.0" text="+" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Button mnemonicParsing="false" onAction="#handleOperation" prefWidth="52.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Button mnemonicParsing="false" onAction="#handleOperation" prefWidth="52.0" text="*" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Button mnemonicParsing="false" onAction="#handleOperation" prefWidth="52.0" text="/" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+        <Button mnemonicParsing="false" prefWidth="52.0" text="+/-" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+        <Button mnemonicParsing="false" onAction="#clearthefield" prefWidth="52.0" text="c" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="0" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <Button mnemonicParsing="false" onAction="#handledigitaction" prefWidth="52.0" text="." GridPane.columnIndex="1" GridPane.rowIndex="5" />
+        <Button mnemonicParsing="false" onAction="#handleEqualOperation" prefWidth="52.0" text="=" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+        <TextField fx:id="displayfield" alignment="CENTER_RIGHT" editable="false" prefHeight="28.0" prefWidth="179.0" GridPane.columnIndex="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="0" GridPane.rowSpan="1" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <MenuBar layoutX="14.0" layoutY="14.0" prefWidth="210.0">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Delete" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </children>
+</AnchorPane>
