@@ -1,0 +1,100 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package calculator;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+/**
+ *
+ * @author Henry
+ */
+public class FXMLDocumentController implements Initializable {
+    private double currentNum;
+    private String currentOperation;
+    
+    @FXML
+    private TextField displayfield;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+
+    private void handleZeroAction(ActionEvent event) {
+        displayfield.setText("0");
+    }
+
+    @FXML
+    private void handledigitaction(ActionEvent event) {
+        String digit =((Button) event.getSource()).getText();
+        String old = displayfield.getText();
+        String newText = old + digit;
+        displayfield.setText(newText);
+    }
+
+    @FXML
+    private void clearthefield(ActionEvent event) {
+         displayfield.setText("");
+    }
+
+    @FXML
+    private void handleEqualOperation(ActionEvent event) {
+        String newText = displayfield.getText();
+        double newNum = Double.parseDouble(newText);
+        switch(currentOperation){
+            case"+":
+                currentNum = currentNum+newNum;
+                break;
+            case"-":  
+                currentNum = currentNum-newNum;
+                break;
+            case"*":
+                currentNum = currentNum*newNum;
+                break;
+            case"/":
+                currentNum = currentNum/newNum;
+                break;
+        }
+        displayfield.setText(""+currentNum);
+    }
+
+    @FXML
+    private void handleOperation(ActionEvent event) {
+        String currentText = displayfield.getText();
+        currentNum = Double.parseDouble(currentText);
+        displayfield.setText("");
+        currentOperation = ((Button) event.getSource()).getText();
+        
+    }
+
+    @FXML
+    private void handlePosNeg(ActionEvent event) {
+        String digit = displayfield.getText();
+        currentNum = Double.parseDouble(digit)*(-1);
+        digit= String.valueOf(currentNum);
+        displayfield.setText(digit);
+    }
+
+    @FXML
+    private void handleDel(ActionEvent event) {
+        String digit = displayfield.getText();
+        if(digit.length()==1){
+            displayfield.setText("");
+        }
+        else{
+            digit=digit.substring(0,digit.length()-1);
+            displayfield.setText(digit);
+        }
+    }
+    
+}
